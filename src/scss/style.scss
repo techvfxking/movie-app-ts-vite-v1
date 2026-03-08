@@ -8,20 +8,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
-    padding-top: 70px;
-}
-
-.navbar {
-    &-brand {
-        &-logo {
-            width: 45px;
-            height: 45px;
-
-            &-text {
-                font-family: "Honk", "Poppins", sans-serif, system-ui;
-                font-size: x-large;
-            }
-        }
-    }
+.navbar-brand-logo-text {
+    font-family: "Honk", "Poppins", sans-serif, system-ui;
 }

@@ -1,9 +1,9 @@
 import AboutComponent from "../components/about.component";
 import FavouriteComponent from "../components/favourite.component";
 import HomeComponent from "../components/home.component";
-import type { TNavName } from "../types/navbar.type";
+import type { TComponentMap } from "../types/component.type";
 
-const ComponentMap: Record<TNavName, () => string> = {
+const ComponentMap: TComponentMap = {
     Home: HomeComponent,
     Favourite: FavouriteComponent,
     About: AboutComponent

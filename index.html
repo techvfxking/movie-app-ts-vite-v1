@@ -15,13 +15,13 @@
   <title>Movie Info Hub</title>
 </head>
 
-<body>
+<body class="pt-5">
   <header class="header-element">
     <nav class="navbar fixed-top navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" onclick="window.location.reload(); return false;">
-          <img class="d-inline-block align-text-center navbar-brand-logo" src="/logo.png" alt="Movie Info Hub Logo">
-          <span class="navbar-brand-logo-text d-inline-block align-text-center">Movie Info Hub</span>
+        <a class="navbar-brand" href="/home">
+          <img class="d-inline-block align-text-center navbar-brand-logo img-thumbnail rounded" width="45" height="45" src="/logo.png" alt="Movie Info Hub Logo">
+          <span class="navbar-brand-logo-text d-inline-block align-text-center fs-4">Movie Info Hub</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
       </div>
     </nav>
   </header>
-  <main class="container mt-4">
+  <main class="container-fluid mt-5 ps-5 pe-5">
     <div id="app"></div>
   </main>
   <script type="module" src="/src/ts/main.ts"></script>
