@@ -5,8 +5,8 @@ const NavbarComponentData: Array<TNavbar> = [
         id: "btn_1",
         name: "Home",
         icon: "bi bi-house",
-        isActive: true,
-        isFillIcon: true
+        isActive: false,
+        isFillIcon: false
     },
     {
         id: "btn_2",

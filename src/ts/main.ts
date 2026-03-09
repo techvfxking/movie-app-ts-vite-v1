@@ -5,7 +5,6 @@ import ComponentMap from './data/components.dto';
 import { HomeComponentEvents } from "./components/home.component";
 
 const ResolveRouteFromURL = (): void => {
-    NavbarComponentData.forEach(nav => { nav.isActive = false; nav.isFillIcon = false; });
     const path = window.location.pathname.replace("/", "").toLowerCase();
     const route = NavbarComponentData.find(item => item.name.toLowerCase() === path);
     if (route) {
