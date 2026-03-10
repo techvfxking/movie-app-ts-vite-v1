@@ -1,0 +1,1 @@
+export declare type TEventNames = "input" | "keypress";
