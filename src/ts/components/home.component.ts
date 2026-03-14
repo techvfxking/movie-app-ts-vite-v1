@@ -1,4 +1,5 @@
 import HomeStore from "../store/home.store";
+import type { TEventNames } from "../types/events.type";
 
 const HomeComponent = (): string => {
     return `
@@ -34,11 +35,54 @@ const HomeComponent = (): string => {
     `;
 }
 
-export const HomeComponentEvents = () => {
-    const input = document.querySelector<HTMLInputElement>("#search-input");
-    input?.addEventListener("input", () => {
-        HomeStore.searchInputValue = input.value;
+export const HomeComponentEvents = (): void => {
+    StoreNativeHTMLElements();
+    HomeStore.searchInputEvents.forEach((event) => {
+        HomeStore.searchInput?.addEventListener(event, (e: InputEvent | KeyboardEvent) => {
+            if (e.type as TEventNames === "input") HandleSearchInputTyping(e as InputEvent);
+            else if (e.type as TEventNames === "keypress") HandleKeyPressEvent(e as KeyboardEvent);
+        });
     });
+    HomeStore.searchBtn?.addEventListener("click", HandleSearch);
+    HomeStore.clearBtn?.addEventListener("click", HandleClear);
 };
+
+const StoreNativeHTMLElements = (): void => {
+    HomeStore.searchInput = document.querySelector<HTMLInputElement>("#search-input");
+    HomeStore.searchBtn = document.querySelector<HTMLButtonElement>("#search-btn");
+    HomeStore.clearBtn = document.querySelector<HTMLButtonElement>("#clear-btn");
+    HomeStore.searchAlert = document.querySelector<HTMLDivElement>("#search-alert");
+    HomeStore.searchLoader = document.querySelector<HTMLDivElement>("#search-loader");
+}
+
+const ShowLoader = (status: boolean): void => {
+    const loader = HomeStore.searchLoader;
+    const loaderClassListRemove: Array<string> = ["d-none"]
+    const loaderClassListAdd: Array<string> = ["d-flex", "justify-content-center", "align-items-center", "fs-4"];
+    if (!loader) return;
+    if (status) {
+        loader.classList.remove(...loaderClassListRemove);
+        loader.classList.add(...loaderClassListAdd);
+    } else {
+        loader.classList.add(...loaderClassListRemove);
+        loader.classList.remove(...loaderClassListAdd);
+    }
+}
+
+const HandleSearch = async () => {
+
+}
+
+const HandleClear = () => {
+
+}
+
+const HandleSearchInputTyping = (e: InputEvent) => {
+
+}
+
+const HandleKeyPressEvent = (e: KeyboardEvent) => {
+
+}
 
 export default HomeComponent;

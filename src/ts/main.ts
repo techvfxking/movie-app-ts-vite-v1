@@ -1,5 +1,6 @@
 import '../scss/style.scss';
 import NavbarComponent, { NavbarButtonEventRegistration } from './components/navbar.component';
+import FooterComponent from './components/footer.component';
 import NavbarComponentData from './data/navbar.dto';
 import ComponentMap from './data/components.dto';
 import { HomeComponentEvents } from "./components/home.component";
@@ -35,6 +36,7 @@ const RenderApp = (): void => {
                 break;
         }
     }
+    document.body.appendChild(FooterComponent());
 };
 
 window.addEventListener("popstate", () => {
